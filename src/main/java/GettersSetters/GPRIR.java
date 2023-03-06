@@ -10,11 +10,41 @@ package GettersSetters;
  */
 public class GPRIR {
     
-    OpcodeIns opcode = new OpcodeIns();
-    String Mar;
-    String Pc;
-    String Mbr;
-     public void setOpcode(OpcodeIns opcode) {
+    //Getters and Setter for all registers
+    
+   public OpcodeIns opcode;
+   private String Mar;
+   private String Pc;
+   private String Mbr;
+   private String registerOne; 
+   private String registerTwo;
+   private String registerThree;
+   private String registerZero;
+   private String Ir; 
+   private String IndexRegisterOne;
+   private String IndexRegisterTwo;
+   private String IndexRegisterThree;
+   private int haltIns;
+   private int[] conditionCode;
+   
+   public GPRIR()
+   {
+    opcode = new OpcodeIns();  
+    Mar = "";
+    Pc = "";
+    Mbr = "";
+    registerOne = "";
+    registerTwo = "";
+    registerThree = "";
+    registerZero = "";
+    Ir = "";
+    IndexRegisterOne = "";
+    IndexRegisterTwo = "";
+    IndexRegisterThree = "";
+    haltIns = 0;
+   }
+   
+    public void setOpcode(OpcodeIns opcode) {
         this.opcode = opcode;
     }
 
@@ -48,4 +78,95 @@ public class GPRIR {
     {
         return this.Mbr;
     }
+    public String getRegisterOne() {
+        
+        return registerOne;
+    }
+
+    public void setRegisterOne(String registerOne) {
+
+        this.registerOne = registerOne;
+    }
+
+    public String getRegisterTwo() {
+        return registerTwo;
+    }
+
+    public void setRegisterTwo(String registerTwo) {
+
+        this.registerTwo = registerTwo;
+    }
+
+    public String getRegisterThree() {
+        return registerThree;
+    }
+
+    public void setRegisterThree(String registerThree) {
+
+        this.registerThree = registerThree;
+    }
+    
+    public void setRegisterZero(String registerZero)
+    {
+        this.registerZero = registerZero;
+    }
+    
+    public String getRegisterZero()
+    {
+        return registerZero;
+    }
+    public void setIr(String Ir)
+    {
+        this.Ir = Ir;
+        
+    }
+    public String getIr()
+    {
+        return Ir;
+    }
+    
+       public void setIndexRegisterOne(String registerOne)
+    {
+        this.IndexRegisterOne = registerOne;
+    }
+    
+    public String getIndexRegisterOne()
+    {
+        return IndexRegisterOne;
+    }
+       public void setIndexRegisterTwo(String registerTwo)
+    {
+        this.IndexRegisterTwo = registerTwo;
+    }
+    
+    public String getIndexRegisterTwo()
+    {
+        return IndexRegisterTwo;
+    }
+        public void setIndexRegisterThree(String registerThree)
+    {
+        this.IndexRegisterThree = registerThree;
+    }
+    
+    public String getIndexRegisterThree()
+    {
+        return IndexRegisterThree;
+    }
+    public void setHaltIns(Integer value)
+    {
+        this.haltIns = value;
+    }
+    
+    public Integer getHaltIns()
+    {
+        return haltIns;
+    }
+    public int[] getConditionCode() {
+        return conditionCode;
+    }
+
+    public void setConditionCode(int[] ConditionCode) {
+    	conditionCode = ConditionCode;
+    }
 }
+

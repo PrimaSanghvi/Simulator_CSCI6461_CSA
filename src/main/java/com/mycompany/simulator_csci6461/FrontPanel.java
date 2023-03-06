@@ -4,10 +4,12 @@
  */
 package com.mycompany.simulator_csci6461;
 
+import GettersSetters.GPRIR;
 import UtilityPackage.Utilities;
 import java.awt.Component;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
@@ -20,15 +22,20 @@ import javax.swing.filechooser.FileSystemView;
  */
 public class FrontPanel extends javax.swing.JFrame {
 
+    
+private BackendSimulator backend;
     /**
      * Creates new form FrontPanel
      */
     public FrontPanel() {
+        this.backend = new BackendSimulator();
         initComponents();
+        updateOrSetAllTextFieldValues();
     }
 public HashMap<String,String> map;
-BackendSimulator backend = new BackendSimulator();
-Utilities util = new Utilities();
+ 
+
+//GPRIR gprIR = new GPRIR();
 
 String tb0 = "0";
 String tb1 = "0";
@@ -103,7 +110,6 @@ String tb15 = "0";
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
@@ -116,7 +122,6 @@ String tb15 = "0";
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToggleButton1.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton1.setText("0");
         jToggleButton1.setEnabled(false);
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +130,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton2.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton2.setText("1");
         jToggleButton2.setEnabled(false);
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +138,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton3.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton3.setText("2");
         jToggleButton3.setEnabled(false);
         jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +146,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton4.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton4.setText("3");
         jToggleButton4.setEnabled(false);
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +154,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton5.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton5.setText("4");
         jToggleButton5.setEnabled(false);
         jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +162,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton6.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton6.setText("5");
         jToggleButton6.setEnabled(false);
         jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -170,7 +170,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton7.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton7.setText("6");
         jToggleButton7.setEnabled(false);
         jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -179,7 +178,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton8.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton8.setText("7");
         jToggleButton8.setEnabled(false);
         jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -188,7 +186,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton9.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton9.setText("8");
         jToggleButton9.setEnabled(false);
         jToggleButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -197,7 +194,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton10.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton10.setText("9");
         jToggleButton10.setEnabled(false);
         jToggleButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -206,7 +202,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton11.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton11.setText("10");
         jToggleButton11.setEnabled(false);
         jToggleButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -215,7 +210,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton12.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton12.setText("11");
         jToggleButton12.setEnabled(false);
         jToggleButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -224,7 +218,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton13.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton13.setText("12");
         jToggleButton13.setEnabled(false);
         jToggleButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -233,7 +226,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton14.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton14.setText("13");
         jToggleButton14.setEnabled(false);
         jToggleButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -242,7 +234,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton15.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton15.setText("14");
         jToggleButton15.setEnabled(false);
         jToggleButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -251,7 +242,6 @@ String tb15 = "0";
             }
         });
 
-        jToggleButton16.setBackground(new java.awt.Color(153, 204, 255));
         jToggleButton16.setText("15");
         jToggleButton16.setEnabled(false);
         jToggleButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -272,9 +262,19 @@ String tb15 = "0";
 
         jButton3.setText("Run");
         jButton3.setEnabled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("SS");
         jButton4.setEnabled(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Load");
         jButton5.setEnabled(false);
@@ -286,6 +286,11 @@ String tb15 = "0";
 
         jButton6.setText("Store");
         jButton6.setEnabled(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("St+");
         jButton7.setEnabled(false);
@@ -367,14 +372,12 @@ String tb15 = "0";
             }
         });
 
-        jTextField9.setEditable(false);
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField9ActionPerformed(evt);
             }
         });
 
-        jTextField10.setEditable(false);
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField10ActionPerformed(evt);
@@ -409,15 +412,6 @@ String tb15 = "0";
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
-            }
-        });
-
-        jButton11.setText("LD");
-        jButton11.setEnabled(false);
-        jButton11.setFocusPainted(false);
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
             }
         });
 
@@ -522,54 +516,50 @@ String tb15 = "0";
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton5))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jToggleButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jButton19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(33, 33, 33)
-                                        .addComponent(jToggleButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jToggleButton16)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jToggleButton15)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jToggleButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(32, 32, 32)
-                                        .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jToggleButton13)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jToggleButton11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel9)
+                                        .addComponent(jLabel8))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(270, 270, 270)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel9)
-                                            .addComponent(jLabel8))))))
+                                        .addComponent(jToggleButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(60, 60, 60)
+                                        .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42)
-                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(82, 82, 82))
+                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -605,14 +595,13 @@ String tb15 = "0";
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton1)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(81, Short.MAX_VALUE))
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -670,12 +659,10 @@ String tb15 = "0";
                                 .addComponent(jLabel11))
                             .addComponent(jButton10))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel10)
-                                .addComponent(jButton15))
-                            .addComponent(jButton11))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)
+                            .addComponent(jButton15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -817,16 +804,15 @@ String tb15 = "0";
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        ResetAllValues();
+        
         Component[] com = jPanel1.getComponents();
-//Inside you action event where you want to disable everything
-//Do the following
-    for (int a = 0; a < com.length; a++) {
-     com[a].setEnabled(true);
-    }
-   
+
+        for (int a = 0; a < com.length; a++) {
+        com[a].setEnabled(true);
+        }
     
-       
-       
+     updateOrSetAllTextFieldValues(); 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jToggleButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton9ActionPerformed
@@ -841,6 +827,12 @@ String tb15 = "0";
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+         if(jTextField9.getText() != null && jTextField9.getText() != "")
+         {
+             String output = backend.marDisplayValue(jTextField9.getText());
+             
+             jTextField10.setText(output);
+         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -1010,6 +1002,7 @@ String tb15 = "0";
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
@@ -1058,22 +1051,35 @@ String tb15 = "0";
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_jTextField8ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+        
          String res = tb15 + tb14 +tb13 + tb12 +tb11 + tb10 +tb9 + tb8 + tb7 + tb6 +tb5 + tb4 + tb3 + tb2 +tb1 + tb0;
          jTextField8.setText(res); 
+        
+         
+         if(jTextField8.getText() != null && jTextField8.getText() != "")
+         backend.pcListener(jTextField8.getText());
+       
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:  
     }//GEN-LAST:event_jTextField9ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
          String res = tb15 + tb14 +tb13 + tb12 +tb11 + tb10 +tb9 + tb8 + tb7 + tb6 +tb5 + tb4 + tb3 + tb2 +tb1 + tb0;
          jTextField9.setText(res); 
+        
+         if(jTextField9.getText() != null && jTextField9.getText()!= "")
+         {
+         backend.marListener(jTextField9.getText());         
+         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
@@ -1082,19 +1088,47 @@ String tb15 = "0";
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
+        
          String res = tb15 + tb14 +tb13 + tb12 +tb11 + tb10 +tb9 + tb8 + tb7 + tb6 +tb5 + tb4 + tb3 + tb2 +tb1 + tb0;
          jTextField10.setText(res); 
+        
+         if(jTextField10.getText() != null && jTextField10.getText() != "")
+         backend.MbrListener(jTextField10.getText());
+         
+        
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField11ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-         String res = tb15 + tb14 +tb13 + tb12 +tb11 + tb10 +tb9 + tb8 + tb7 + tb6 +tb5 + tb4 + tb3 + tb2 +tb1 + tb0;
-         jTextField11.setText(res); 
-    }//GEN-LAST:event_jButton11ActionPerformed
+        if(jTextField8.getText() != null && !jTextField8.getText().equalsIgnoreCase(""))
+            backend.pcListener(jTextField8.getText());
+        backend.runBtnListner();         
+        updateOrSetAllTextFieldValues();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        if(jTextField8.getText() != null && !jTextField8.getText().equalsIgnoreCase(""))
+        {
+            backend.gpIr.setPc(jTextField8.getText());
+        }
+        backend.singleStepBtnListener();
+        jTextField8.setText(backend.gpIr.getPc());
+        
+        updateOrSetAllTextFieldValues();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        if(jTextField9.getText() != null && jTextField9.getText() != "" && jTextField10.getText() != null && jTextField10.getText() != "")
+         {
+             backend.setDataInMainMemoryByLocation(jTextField9.getText(),jTextField10.getText());
+         }
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1131,11 +1165,82 @@ String tb15 = "0";
         });
         
     }
+     private void setComponentValue(javax.swing.JTextField textFieldComponent, String value) {
+        if (value != null && !value.equals("")) {
+            textFieldComponent.setText(value);
+        }
+        
+    }
+public void updateOrSetAllTextFieldValues() {
+      
+//    setComponentValue(this.jTextField8, backend.gpIr.getPc());
+//        setComponentValue(this.jTextField9, backend.gpIr.getMar());
+//        setComponentValue(this.jTextField10, backend.gpIr.getMbr());
+//        setComponentValue(this.jTextField11, backend.gpIr.getIr());
+//        
+        setComponentValue(this.jTextField1,
+                backend.gpIr.getRegisterZero());
+        setComponentValue(this.jTextField4,
+                backend.gpIr.getRegisterOne());
+        setComponentValue(this.jTextField3,
+                backend.gpIr.getRegisterTwo());
+        setComponentValue(this.jTextField2,
+                backend.gpIr.getRegisterThree());
+
+        setComponentValue(this.jTextField5,
+                backend.gpIr.getIndexRegisterOne());
+        setComponentValue(this.jTextField6,
+                backend.gpIr.getIndexRegisterTwo());
+        setComponentValue(this.jTextField7,
+                backend.gpIr.getIndexRegisterThree());
+
+      
+    }
+public void ResetAllValues()
+{
+    this.jTextField1.setText("");
+    this.jTextField2.setText("");
+    this.jTextField3.setText("");
+    this.jTextField4.setText("");
+    this.jTextField5.setText("");
+    this.jTextField6.setText("");
+    this.jTextField7.setText("");
+    this.jTextField8.setText("");
+    this.jTextField9.setText("");
+    this.jTextField10.setText("");
+    this.jTextField11.setText("");
+    backend.gpIr.setMar("");
+    backend.gpIr.setPc("");
+    backend.gpIr.setMbr("");
+    backend.gpIr.setRegisterOne("");
+    backend.gpIr.setRegisterTwo("");
+    backend.gpIr.setRegisterThree("");
+    backend.gpIr.setRegisterZero("");
+    backend.gpIr.setIr("");
+    backend.gpIr.setIndexRegisterOne("");
+    backend.gpIr.setIndexRegisterTwo("");
+    backend.gpIr.setIndexRegisterThree("");
+    backend.gpIr.setHaltIns(0);
+    backend.gpIr.opcode.setAddress("");
+   backend.gpIr.opcode.setOperations("");
+   backend.gpIr.opcode.setGeneralPurposeRegister("");
+   backend.gpIr.opcode.setIndexRegister("");
+   backend.gpIr.opcode.setIndirectMode("");
+   backend.gpIr.opcode.setEffectiveAddress("");
+    
+   backend.programMem = new ArrayList<>(4096);
+   for(int i=0 ; i< 4096 ; i++)
+           {
+                backend.programMem.add("0");         
+           }
+
+   backend.fileContentList = new ArrayList<>();
+           
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;

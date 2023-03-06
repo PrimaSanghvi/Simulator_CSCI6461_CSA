@@ -10,6 +10,7 @@ package GettersSetters;
  */
 import UtilityPackage.Utilities;
 
+//Make a string of array for Opcode instructions
 public class OpcodeIns {
     
     private String operations;
@@ -29,6 +30,7 @@ Utilities util = new Utilities();
         indirectMode = "";
         address = "";
         shouldIncrementPC = true;
+        effectiveAddress = "";
     }
     public String getOperations() {
         return operations;
@@ -75,7 +77,7 @@ Utilities util = new Utilities();
     }
 
     public void setEffectiveAddress(String effectiveAddress) {
-        this.effectiveAddress = util.convertHexadecimalNumberToFourDigits(effectiveAddress);
+        this.effectiveAddress = effectiveAddress;
     }
 
     public Boolean getShouldIncrementPC() {

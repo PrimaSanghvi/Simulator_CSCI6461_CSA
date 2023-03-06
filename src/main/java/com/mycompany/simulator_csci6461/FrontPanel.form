@@ -104,51 +104,44 @@
                                   <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jButton19" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
+                                      <Component id="jButton20" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Component id="jToggleButton16" min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Component id="jToggleButton16" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jToggleButton15" min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Component id="jToggleButton15" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jToggleButton14" min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Component id="jToggleButton14" min="-2" pref="45" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jToggleButton13" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="jToggleButton13" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jToggleButton12" min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Component id="jToggleButton12" min="-2" pref="47" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jToggleButton11" min="-2" pref="28" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="jButton19" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
-                                              <Component id="jButton20" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="jToggleButton11" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jToggleButton9" min="-2" pref="42" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                          <Component id="jToggleButton10" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jToggleButton9" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                          <Component id="jToggleButton8" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jToggleButton7" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jToggleButton6" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Component id="jToggleButton5" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jToggleButton4" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="270" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jToggleButton10" min="-2" pref="39" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                          <Component id="jToggleButton8" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jToggleButton7" min="-2" pref="38" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jToggleButton6" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jToggleButton5" min="-2" pref="44" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jToggleButton4" min="-2" pref="45" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -156,12 +149,12 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton3" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton2" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="jToggleButton3" min="-2" pref="49" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jToggleButton2" min="-2" pref="41" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jToggleButton1" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                                  <Component id="jToggleButton1" min="-2" pref="38" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
@@ -213,16 +206,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jButton10" min="-2" pref="54" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="jButton4" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="jButton4" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="jButton3" min="-2" pref="54" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton8" min="-2" pref="54" max="-2" attributes="0"/>
                       <Component id="jButton9" min="-2" pref="54" max="-2" attributes="0"/>
-                      <Component id="jButton11" min="-2" pref="54" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="81" max="32767" attributes="0"/>
+                  <EmptySpace pref="62" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -297,13 +289,10 @@
                               <Component id="jButton10" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButton15" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jButton11" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton15" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -365,9 +354,6 @@
       <SubComponents>
         <Component class="javax.swing.JToggleButton" name="jToggleButton1">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="0"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -377,9 +363,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton2">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="1"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -389,9 +372,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton3">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="2"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -401,9 +381,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton4">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="3"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -413,9 +390,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton5">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="4"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -425,9 +399,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton6">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="5"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -437,9 +408,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton7">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="6"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -449,9 +417,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton8">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="7"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -461,9 +426,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton9">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="8"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -473,9 +435,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton10">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="9"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -485,9 +444,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton11">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="10"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -497,9 +453,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton12">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="11"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -509,9 +462,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton13">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="12"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -521,9 +471,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton14">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="13"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -533,9 +480,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton15">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="14"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -545,9 +489,6 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton16">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="15"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -573,12 +514,18 @@
             <Property name="text" type="java.lang.String" value="Run"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
             <Property name="text" type="java.lang.String" value="SS"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton5">
           <Properties>
@@ -594,6 +541,9 @@
             <Property name="text" type="java.lang.String" value="Store"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton7">
           <Properties>
@@ -718,17 +668,11 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField9">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField9ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField10">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField10ActionPerformed"/>
           </Events>
@@ -766,16 +710,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton11">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="LD"/>
-            <Property name="enabled" type="boolean" value="false"/>
-            <Property name="focusPainted" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton14">
