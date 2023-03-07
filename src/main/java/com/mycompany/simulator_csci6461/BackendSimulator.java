@@ -11,8 +11,12 @@ import UtilityPackage.Utilities;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 /**
  *
@@ -24,7 +28,8 @@ public class BackendSimulator extends Simulator_CSCI6461{
      Utilities util = new Utilities();
      public List<String> fileContentList; //Dupicate memory to store only file contents
      GPRIR gpIr; 
-
+     public Map<Integer, Map<String, String>> cache ;
+ 
      public BackendSimulator()
      {
           programMem = new ArrayList<>(4096);
@@ -34,6 +39,7 @@ public class BackendSimulator extends Simulator_CSCI6461{
            {
                 programMem.add("0");         
            }
+           this.cache = new TreeMap<>(Collections.reverseOrder());
      }
      //To get the data from memory and LOAD the contents in MBR when address in entered in MAR
      public String marDisplayValue(String data)
@@ -111,7 +117,8 @@ public class BackendSimulator extends Simulator_CSCI6461{
      {
          
         String opcodeVal = gpIr.getOpcode().getOperations();
-         calculateEffectiveAddress();   //calculate the effective address 
+        calculateEffectiveAddress();   //calculate the effective address 
+        setcache();
         switch (opcodeVal) {
             case "000000":
                 haltOperation();
@@ -191,8 +198,6 @@ public class BackendSimulator extends Simulator_CSCI6461{
             case "011010":
             	rotateRegisterByCount();
             	break;
-            case "" :
-            	
              default:
                 System.out.println("Invalid operations");
         }
@@ -234,7 +239,7 @@ public class BackendSimulator extends Simulator_CSCI6461{
     
     //To read data from General Purpose Register 
     public String getDataFromGPRByOpcode() {
-        String gprRegisterSelect = gpIr.getOpcode().getGeneralPurposeRegister();
+        String gprRegisterSelect = gpIr.getOpcode().getGeneralPurposeRegister(); 
         if (gprRegisterSelect.equals("00")) {
             return gpIr.getRegisterZero();
         }
@@ -458,7 +463,7 @@ public class BackendSimulator extends Simulator_CSCI6461{
           //TODO: Need to know the default value of register. Is it 0 or empty?
           if (dataFromGPRByOpcodeInBinary.equals("") || dataFromGPRByOpcodeInBinary.equals("0000") || dataFromGPRByOpcodeInBinary.equals("000000"))
           {
-        	  gpIr.setPc(gpIr.getOpcode().getEffectiveAddress());
+        	  gpIr.setPc(("0000000000000000" + gpIr.getOpcode().getEffectiveAddress()).substring(gpIr.getOpcode().getEffectiveAddress().length()));
         	  gpIr.getOpcode().setShouldIncrementPC(false);
           }
       }
@@ -499,7 +504,7 @@ public class BackendSimulator extends Simulator_CSCI6461{
                   gpIr.getPc())+1;
           String programControlValueInBinary = util.convertDecimalToBinary(
                   util.convertIntegerToString(programControlValueInDecimal));
-          loadGPRFromOpcode(programControlValueInBinary);
+          gpIr.setRegisterThree(programControlValueInBinary);
           gpIr.setPc(gpIr.getOpcode().getEffectiveAddress());
           gpIr.getOpcode().setShouldIncrementPC(false);
       }
@@ -508,9 +513,10 @@ public class BackendSimulator extends Simulator_CSCI6461{
        // sets gpr3 value to pc and immed to R0
        
       private void returnFromSubRoutine() {
-          String dataFromGPRByOpcodeInBinary = getDataFromGPRByOpcode();
+          String dataFromGPRByOpcodeInBinary = gpIr.getRegisterThree();
           gpIr.setPc(dataFromGPRByOpcodeInBinary);
           gpIr.getOpcode().setShouldIncrementPC(false);
+          gpIr.setRegisterZero("00000000000" + gpIr.getOpcode().getAddress());
       }
       
       
@@ -786,6 +792,17 @@ public class BackendSimulator extends Simulator_CSCI6461{
         }
         loadGPRFromOpcode(util.convertDecimalToBinary(
         		util.convertIntegerToString(Rotate)));
+    }
+    
+   private void setcache()
+    {
+	   String tagValue = gpIr.getPc();
+       String dataValue = gpIr.getMbr();
+
+       int index = cache.size();
+       Map<String, String> map = new HashMap<>();
+       map.put(tagValue, dataValue);
+       cache.put(index, map);
     }
 
  }
