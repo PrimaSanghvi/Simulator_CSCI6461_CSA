@@ -1437,7 +1437,7 @@ private void outputProgramOne(int searchValue)
 			}
 	}
 	
-	jTextArea2.setText(String.valueOf(closestValue));
+	jTextArea2.setText("Number Closest to" + searchValue + "is" + String.valueOf(closestValue));
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
