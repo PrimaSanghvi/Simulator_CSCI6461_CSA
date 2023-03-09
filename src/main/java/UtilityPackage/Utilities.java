@@ -55,7 +55,7 @@ public class Utilities {
 
         //Convert Decimal to Binary
         public static String convertDecimalToBinary(String value) {
-            String binaryString = Integer.toBinaryString(convertHexadecimalToDecimal(value));
+            String binaryString = Integer.toBinaryString(Integer.valueOf(value));
             return ("0000000000000000" + binaryString).substring(binaryString.length());
         }
 }

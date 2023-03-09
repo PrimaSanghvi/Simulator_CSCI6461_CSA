@@ -632,7 +632,7 @@ public class BackendSimulator extends Simulator_CSCI6461{
       }
 
       // Getting data from GPR for multiplication and division operations
-       // @return Data from the GPR specific register
+       // return Data from the GPR specific register
        
       public String getDataGPRForMultiplyAndDivision() {
           String gprRegisterSelect = gpIr.getOpcode().getGeneralPurposeRegister();
@@ -643,6 +643,14 @@ public class BackendSimulator extends Simulator_CSCI6461{
           if (gprRegisterSelect.equals("10")) {
               result = gpIr.getRegisterTwo();
           }
+          if(gprRegisterSelect.equals("01") && !gpIr.getOpcode().getOperations().equalsIgnoreCase("010000") && !gpIr.getOpcode().getOperations().equalsIgnoreCase("010001"))
+          {
+        	  result = gpIr.getRegisterOne();
+          }
+          if(gprRegisterSelect.equals("11") && !gpIr.getOpcode().getOperations().equalsIgnoreCase("010000") && !gpIr.getOpcode().getOperations().equalsIgnoreCase("010001") )
+          {
+        	  result = gpIr.getRegisterThree();
+          }
           return result;
       }
       
@@ -650,10 +658,21 @@ public class BackendSimulator extends Simulator_CSCI6461{
        // return Data from the IXR specific register
       
       public String getDataIXRForMultiplyAndDivision() {
-          String ixrRegisterSelect = gpIr.getOpcode().getIndexRegister();
+          String ixrRegisterSelect = gpIr.getOpcode().getGeneralPurposeRegister();
           String result = "";
+          if (ixrRegisterSelect.equals("00")) {
+              result = gpIr.getRegisterZero();
+          }
           if (ixrRegisterSelect.equals("10")) {
-              result = gpIr.getIndexRegisterTwo();
+              result = gpIr.getRegisterTwo();
+          }
+          if(ixrRegisterSelect.equals("01")&& !gpIr.getOpcode().getOperations().equalsIgnoreCase("010000") && !gpIr.getOpcode().getOperations().equalsIgnoreCase("010001"))
+          {
+        	  result = gpIr.getRegisterOne();
+          }
+          if(ixrRegisterSelect.equals("11") && !gpIr.getOpcode().getOperations().equalsIgnoreCase("010000") && !gpIr.getOpcode().getOperations().equalsIgnoreCase("010001"))
+          {
+        	  result = gpIr.getRegisterThree();
           }
           return result;
       }
@@ -661,16 +680,16 @@ public class BackendSimulator extends Simulator_CSCI6461{
       //loading index register from opcode
      //  data value to be load
      private void loadIXRFromOpcode(String data) {
-          String ixrRegisterSelect = gpIr.getOpcode().getIndexRegister();
-          if (ixrRegisterSelect.equals("01")) {
-        	  gpIr.setIndexRegisterOne(data);
+          String ixrRegisterSelect = gpIr.getOpcode().getGeneralPurposeRegister();
+          if (ixrRegisterSelect.equals("00")) {
+        	  gpIr.setRegisterOne(data);
               return;
           }
           if (ixrRegisterSelect.equals("10")) {
-        	  gpIr.setIndexRegisterTwo(data);
+        	  gpIr.setRegisterThree(data);
               return;
           }
-          gpIr.setIndexRegisterThree(data);
+          
       }
 
      // Perform division operation between two registers
@@ -703,18 +722,24 @@ public class BackendSimulator extends Simulator_CSCI6461{
          int dataFromIXRByOpcode = util.convertBinaryToDecimal(
         		 getDataIXRForMultiplyAndDivision());
          int[] cc = gpIr.getConditionCode();
-         if(dataFromGPRByOpcodeInDecimal==dataFromIXRByOpcode){
+         if(dataFromGPRByOpcodeInDecimal==dataFromIXRByOpcode)
+         {
              cc[3]=1;
+             gpIr.setConditionCode(cc);
          }
+         else
+         {
          cc[3]=0;
+         gpIr.setConditionCode(cc);
+         }
      }
 
     // Performing register to register logical AND operation.
     private void logicalAndRegisterToRegister(){
          int dataFromGPRByOpcodeInDecimal = util.convertBinaryToDecimal(
-        		 getDataFromGPRByOpcode());
+        		 getDataGPRForMultiplyAndDivision());
          int dataFromIXRByOpcode = util.convertBinaryToDecimal(
-        		 getDataFromGPRByOpcode());
+        		 getDataIXRForMultiplyAndDivision());
          int rx = dataFromGPRByOpcodeInDecimal & dataFromIXRByOpcode;
          
          loadGPRFromOpcode(util.convertDecimalToBinary(
@@ -724,9 +749,9 @@ public class BackendSimulator extends Simulator_CSCI6461{
     // Perform logical OR operation for gpr0 and ixr1 registers and store the result on gpr0.
     private void logicalOrRegisterAndRegister() {
         int dataFromGPRByOpcodeInDecimal = util.convertBinaryToDecimal(
-                getDataFromGPRByOpcode());
+        		getDataGPRForMultiplyAndDivision());
         int dataFromIXRByOpcodeInDecimal = util.convertBinaryToDecimal(
-                getDataFromIXRByOpcode());
+        		getDataIXRForMultiplyAndDivision());
 
         int orValue = dataFromGPRByOpcodeInDecimal | dataFromIXRByOpcodeInDecimal;
         loadGPRFromOpcode(util.convertDecimalToBinary(

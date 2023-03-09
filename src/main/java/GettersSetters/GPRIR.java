@@ -42,6 +42,7 @@ public class GPRIR {
     IndexRegisterTwo = "";
     IndexRegisterThree = "";
     haltIns = 0;
+    conditionCode = new int[4];
    }
    
     public void setOpcode(OpcodeIns opcode) {
