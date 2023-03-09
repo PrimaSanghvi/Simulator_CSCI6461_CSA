@@ -256,7 +256,8 @@ public class BackendSimulator extends Simulator_CSCI6461{
     public void loadGPRFromOpcode(String data)
     {
         String gprRegisterSelect = gpIr.getOpcode().getGeneralPurposeRegister();
-        if (gprRegisterSelect.equals("00")) {
+        if (gprRegisterSelect.equals("00")) 
+        {
             gpIr.setRegisterZero(data);
             return;
         }
@@ -658,7 +659,7 @@ public class BackendSimulator extends Simulator_CSCI6461{
        // return Data from the IXR specific register
       
       public String getDataIXRForMultiplyAndDivision() {
-          String ixrRegisterSelect = gpIr.getOpcode().getGeneralPurposeRegister();
+          String ixrRegisterSelect = gpIr.getOpcode().getIndexRegister();
           String result = "";
           if (ixrRegisterSelect.equals("00")) {
               result = gpIr.getRegisterZero();
